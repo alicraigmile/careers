@@ -1,0 +1,26 @@
+{
+  "name": "careers",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node ./bin/careers",
+    "test": "mocha test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alicraigmile/careers.git"
+  },
+  "author": "Ali Craigmile <ali@craigmile.com> (http://ali.craigmile.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alicraigmile/careers/issues"
+  },
+  "homepage": "https://github.com/alicraigmile/careers#readme",
+ "dependencies": {
+    "chai": "^3.5.0",
+    "express": "^4.14.0",
+    "mocha": "^3.1.2",
+    "morgan": "^1.7.0",
+    "supertest": "^2.0.1"
+  }
+}
