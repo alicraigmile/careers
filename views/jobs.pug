@@ -1,0 +1,21 @@
+html
+  head
+    title All jobs | careers.xgusties.com
+    link(rel='stylesheet', href='/css/style.css')
+    meta(charset="utf-8")
+  body
+    h1 All jobs
+    p using API version '#{version}'
+    ul
+      each job in jobs
+        li
+          div(class='job')
+            span(class='title')
+              a(href=job.url)= job.title
+            span(class='division')= job.division
+            span(class='location')= job.location
+    aside
+      p
+        | © 2016 xgusties.com |
+        a(href='mailto:webmaster@xgusties.com') Contact Us
+
