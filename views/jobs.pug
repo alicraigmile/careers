@@ -6,6 +6,9 @@ html
   body
     h1 All jobs
     p using API version '#{version}'
+    p last updated:
+      = ' '
+      time(datetime=timestamp, title=timestampReadable)= timestampSince
     ul
       each job in jobs
         li
