@@ -1,26 +1,63 @@
 html
   head
     title All jobs | careers.xgusties.com
-    link(rel='stylesheet', href='/css/style.css')
     meta(charset="utf-8")
+    script(src='/bower_components/jquery/dist/jquery.min.js')
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
+    script(src='/bower_components/bootstrap-combobox/js/bootstrap-combobox.js')
+    link(rel='stylesheet', href='/bower_components/bootstrap-combobox/css/bootstrap-combobox.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+
   body
-    h1 All jobs
-    p using API version '#{version}'
-    p last updated:
-      = ' '
-      time(datetime=timestamp, title=timestampReadable)= timestampSince
-    ul
-      each job in jobs
-        li
-          div(class='job')
-            span(class='title')
-              a(href=job.url)= job.title 
-            = ' ' 
-            span(class='division')= job.division
-            = ' ' 
-            span(class='location')= job.location
-    aside
-      p
-        | © 2016 xgusties.com |
-        a(href='mailto:webmaster@xgusties.com') Contact Us
+    div(class='container')
+      h1 All jobs
+      p Source data: 
+        a(href='/'+version+'/jobs.json')
+          | Careers API v#{version}
+      p Last updated:
+        = ' '
+        time(datetime=timestamp, title=timestampReadable)= timestampSince
+      form
+        label
+          | Jobs in 
+          select(class='combobox input-large form-control')
+            option(value='') Select a location
+            option(value='London') London
+            option(value='North') North / Salford
+            option(value='Midlands') Birmingham
+            option(value='Northern Ireland') Northern Ireland
+            option(value='Scotland') Scotland
+            option(value='Wales') Wales
+            option(value='English Regions') English Regions
+            option(value='international') International
+      script(type='text/javascript').
+        $(document).ready(function(){
+          $('.combobox').combobox();
+          $('.combobox').on('change', function() {
+            var value = this.value;
+            $("li").each(function() {
+
+              if ($(this).text().search(value) > -1) {
+                  $(this).show();
+              }
+              else {
+                  $(this).hide();
+              }
+            });
+          });
+        });
+      ul
+        each job in jobs
+          li
+            div(class='job')
+              span(class='title')
+                a(href=job.url)= job.title 
+              = ' ' 
+              span(class='division')= job.division
+              = ' ' 
+              span(class='location')= job.location
+      aside
+        p
+          | © 2016 xgusties.com |
+          a(href='mailto:webmaster@xgusties.com') Contact Us
 
