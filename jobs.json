@@ -1,0 +1,16 @@
+{
+   "jobs" : [
+      {
+         "location" : "Glasgow, United Kingdom",
+         "division" : "xgusties.com Development Team",
+         "grade" : "-",
+         "term" : "Fixed Term – Full Time",
+         "url" : "http://careers.xgusties.com/jobs/example-role/99899",
+         "type" : "http://schema.org/JobPosting",
+         "id" : 1,
+         "title" : "Example Role"
+      }
+	 ],
+   "timestamp" : "2016-11-23T12:13:14Z",
+   "version" : "2"
+}

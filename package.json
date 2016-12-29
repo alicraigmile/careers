@@ -1,7 +1,7 @@
 {
   "name": "careers",
-  "version": "1.2.0",
-  "description": "",
+  "version": "1.3.1",
+  "description": "A jobs board",
   "scripts": {
     "start": "node ./bin/careers",
     "test": "mocha test/"
